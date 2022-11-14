@@ -4,7 +4,11 @@
 ![GitHub forks](https://img.shields.io/github/forks/kalebzmm/doesangue?style=for-the-badge)
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/kalebzmm/doesangue?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/kalebzmm/doesangue?style=for-the-badge)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
 
 <img src="icons8-gota-de-sangue-48.png" alt="Logo do projeto">
 
