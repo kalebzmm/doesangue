@@ -1,8 +1,8 @@
 import React from 'react'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import HomeScreen from './Home';
-import SettingsScreen from './Settings';
-import ScheduleScreen from './Schedule';
+import HomeScreen from './screens/Home';
+import UserScreen from './screens/User';
+import ScheduleScreen from './screens/Schedule';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 
@@ -30,12 +30,12 @@ const BottomNav = () => {
         name="Schedule" component={ScheduleScreen} />
       <Tab.Screen
         options={{
-          tabBarLabel: 'Configurações',
+          tabBarLabel: 'Perfil',
           tabBarIcon: ({ color }) => (
-            <MaterialIcons name="settings" color={color} size={26} />
+            <MaterialIcons name="person" color={color} size={26} />
           ),
         }}
-        name="Settings" component={SettingsScreen} />
+        name="Settings" component={UserScreen} />
     </Tab.Navigator>
   );
 };
