@@ -4,6 +4,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/kalebzmm/doesangue?style=for-the-badge)
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/kalebzmm/doesangue?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/kalebzmm/doesangue?style=for-the-badge)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
 
 <img src="icons8-gota-de-sangue-48.png" alt="Logo do projeto">
 
