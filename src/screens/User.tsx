@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet, View } from "react-native";
 import { Button } from 'react-native-paper';
 import TextInput from '../components/TextInput';
-import theme from '../core/theme';
+import { Avatar } from 'react-native-paper'
 
 const UserScreen = ({ navigation }: any) => {
 
@@ -19,6 +19,7 @@ const UserScreen = ({ navigation }: any) => {
 
   return (
     <View style={styles.container}>
+      <Avatar.Image style={styles.avatar} size={150} source={require('../assets/avatar.jpg')} />
       <TextInput
         label="Nome"
         returnKeyType="next"
@@ -75,6 +76,9 @@ const styles = StyleSheet.create({
   saveButton: {
     width: '100%',
     marginTop: 20
+  },
+  avatar: {
+    marginBottom: 20
   }
 })
 
