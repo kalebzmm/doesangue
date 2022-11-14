@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableNativeFeedback, View } from "react-native";
 import { Button } from 'react-native-paper';
 import TextInput from '../components/TextInput';
 import { Avatar } from 'react-native-paper'
 
 const UserScreen = ({ navigation }: any) => {
 
-  const [name, setName] = useState({ value: '', error: '' })
-  const [email, setEmail] = useState({ value: '', error: '' })
+  const [name, setName] = useState({ value: 'Kaleb Zimmermann', error: '' })
+  const [email, setEmail] = useState({ value: 'kalebjean22@gmail.com', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
 
   const Logout = () => {
@@ -49,12 +49,16 @@ const UserScreen = ({ navigation }: any) => {
         errorText={password.error}
         secureTextEntry
       />
-      <Button style={styles.saveButton} icon="content-save" mode="contained">
-        Salvar
-      </Button>
-      <Button style={styles.logoutButton} icon="logout" mode="outlined" onPress={Logout}>
-        Sair
-      </Button>
+      <TouchableNativeFeedback>
+        <Button style={styles.saveButton} icon="content-save" mode="contained">
+          Salvar
+        </Button>
+      </TouchableNativeFeedback>
+      <TouchableNativeFeedback>
+        <Button style={styles.logoutButton} icon="logout" mode="outlined" onPress={Logout}>
+          Sair
+        </Button>
+      </TouchableNativeFeedback>
     </View>
   );
 };
@@ -70,12 +74,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logoutButton: {
-    width: '100%',
-    marginTop: 20
+    position: 'absolute',
+    top: 20,
+    right: -25
   },
   saveButton: {
     width: '100%',
-    marginTop: 20
+    marginTop: 15
   },
   avatar: {
     marginBottom: 20
