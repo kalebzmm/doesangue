@@ -3,19 +3,27 @@ import { StyleSheet, TouchableNativeFeedback, View } from "react-native";
 import { Button } from 'react-native-paper';
 import TextInput from '../components/TextInput';
 import { Avatar } from 'react-native-paper'
+import { store } from '../store/redux-store';
+import { useDispatch } from 'react-redux';
+import { setSignOut } from '../store/slices/auth-slice';
 
 const UserScreen = ({ navigation }: any) => {
+
+  const dispatch = useDispatch();
 
   const [name, setName] = useState({ value: 'Kaleb Zimmermann', error: '' })
   const [email, setEmail] = useState({ value: 'kalebjean22@gmail.com', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
 
   const Logout = () => {
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Login' }],
-    })
+    dispatch(setSignOut())
   }
+
+  React.useEffect(() => {
+    const userData = store.getState();
+    setName({...name, value: userData.userAuth.name || ''})
+    setEmail({...email, value: userData.userAuth.email || ''})
+  }, [])
 
   return (
     <View style={styles.container}>

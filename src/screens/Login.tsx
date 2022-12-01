@@ -6,17 +6,24 @@ import Header from '../components/Header'
 import Button from '../components/Button'
 import TextInput from '../components/TextInput'
 import theme from '../core/theme'
+import { useDispatch } from 'react-redux'
+import { setSignIn } from '../store/slices/auth-slice'
+import { authUser } from '../services/user'
 
 const LoginScreen = ({ navigation }: any) => {
 
-  const [email, setEmail] = useState({ value: '', error: '' })
-  const [password, setPassword] = useState({ value: '', error: '' })
+  const [email, setEmail] = useState({ value: 'kalebjean22@gmail.com', error: '' })
+  const [password, setPassword] = useState({ value: 'hb1036', error: '' })
 
-  const onLoginPressed = () => {
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'BottomNav' }],
-    })
+  const dispatch = useDispatch();
+
+  const handleLogin = () => {
+      authUser(email.value, password.value).then((data) => {
+        dispatch(setSignIn(data));
+      }).catch((err) => {
+        console.log(err)
+        setPassword({...password, error: 'Usuário e/ou senha incorretos'})
+      })
   }
 
   return (
@@ -45,7 +52,7 @@ const LoginScreen = ({ navigation }: any) => {
         errorText={password.error}
         secureTextEntry
       />
-      <Button style={{}} mode="contained" onPress={onLoginPressed}>
+      <Button style={{}} mode="contained" onPress={handleLogin}>
         Entrar
       </Button>
       <View style={styles.row}>
