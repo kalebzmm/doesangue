@@ -21,8 +21,8 @@ const UserScreen = ({ navigation }: any) => {
 
   React.useEffect(() => {
     const userData = store.getState();
-    setName({...name, value: userData.userAuth.name || ''})
-    setEmail({...email, value: userData.userAuth.email || ''})
+    setName({...name, value: userData.userData.name || ''})
+    setEmail({...email, value: userData.userData.email || ''})
   }, [])
 
   return (

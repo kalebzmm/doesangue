@@ -3,7 +3,6 @@ import {Provider} from 'react-redux';
 import AppRoute from './Routes';
 import { store } from './src/store/redux-store';
 
-
 const App = () => {
 
   return (

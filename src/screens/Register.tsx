@@ -6,12 +6,26 @@ import Header from '../components/Header'
 import Button from '../components/Button'
 import TextInput from '../components/TextInput'
 import theme from '../core/theme'
+import SelectOptions from '../components/Select'
+import DatePicker from '../components/DatePicker'
 
 const RegisterScreen = ({ navigation }: any) => {
 
   const [name, setName] = useState({ value: '', error: '' })
   const [email, setEmail] = useState({ value: '', error: '' })
+  const [bloodType, setBloodType] = useState({ value: '', error: '' })
+  const [birth, setBirth] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
+  const bloodTypes = [
+    {label: 'A+', value: 'A+'},
+    {label: 'A-', value: 'A-'},
+    {label: 'B+', value: 'B+'},
+    {label: 'B-', value: 'B-'},
+    {label: 'O+', value: 'O+'},
+    {label: 'O-', value: 'O-'},
+    {label: 'AB+', value: 'AB+'},
+    {label: 'AB-  ', value: 'AB-'},
+  ]
 
   const onSignUpPressed = () => {
     navigation.reset({
@@ -42,6 +56,18 @@ const RegisterScreen = ({ navigation }: any) => {
         autoCompleteType="email"
         textContentType="emailAddress"
         keyboardType="email-address"
+      />
+      <SelectOptions
+        label="Tipo Sanguíneo"
+        value={bloodType.value}
+        setValue={(text: string) => setBloodType({ value: text, error: '' })}
+        list={bloodTypes}
+      />
+      <DatePicker
+        label="Nascimento"
+        value={birth.value}
+        onChange={(text: string) => setBirth({ value: text, error: '' })}
+        date={birth.value}
       />
       <TextInput
         label="Senha"

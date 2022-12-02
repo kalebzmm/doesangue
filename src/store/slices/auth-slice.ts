@@ -1,17 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit"
+import AsyncStorage from '@react-native-community/async-storage'
 
 const initialState = {
     isLoggedIn: false,
-    email: null,
-    accessToken: null,
-    name: null,
-    birth: null,
-    blood_type: null,
-    id: null,
+    isLoading: false,
+    email: '',
+    accessToken: '',
+    name: '',
+    birth: '',
+    blood_type: '',
+    id: '',
 }
 
-const authSlice = createSlice({
-    name: 'userAuth',
+const userSlice = createSlice({
+    name: 'userData',
     initialState,
     reducers: {
         setSignIn: (state, action) => {
@@ -22,23 +24,39 @@ const authSlice = createSlice({
             state.blood_type = action.payload.blood_type;
             state.id = action.payload.id;
             state.isLoggedIn = true;
+            AsyncStorage.setItem(
+                '@DoeSangue:token',
+                action.payload.accessToken
+            );
+        },
+        setUserData: (state, action) => {
+            state.email = action.payload.email;
+            state.name = action.payload.name;
+            state.birth = action.payload.birth;
+            state.blood_type = action.payload.blood_type;
+            state.id = action.payload.id;
+            state.accessToken = action.payload.accessToken;
+            state.isLoggedIn = true;
         },
         setSignOut: (state) => {
-            state.email = null;
-            state.accessToken = null;
-            state.name = null;
-            state.birth = null;
-            state.blood_type = null;
-            state.id = null;
+            state.email = '';
+            state.accessToken = '';
+            state.name = '';
+            state.birth = '';
+            state.blood_type = '';
+            state.id = '';
             state.isLoggedIn = false;
-        }
+            AsyncStorage.setItem(
+                '@DoeSangue:token',
+                ''
+            );
+        },
     }
 });
 
-export const { setSignIn, setSignOut } = authSlice.actions;
+export const { setSignIn, setSignOut, setUserData } = userSlice.actions;
 
-export const selectIsLoggedIn = (state: any) => state.userAuth.isLoggedIn;
+export const selectIsLoggedIn = (state: any) => state.userData.isLoggedIn;
+export const selectIsLoading = (state: any) => state.userData.isLoading;
 
-// export const selectUserData = () => authSlice.userAuth;
-
-export default authSlice.reducer;
+export default userSlice.reducer;
