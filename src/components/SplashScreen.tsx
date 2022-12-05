@@ -1,16 +1,16 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native'
+import { ImageBackground, StyleSheet, KeyboardAvoidingView, Image } from 'react-native'
 import theme from '../core/theme'
 
-const Background = ({ children }: any) => {
+const SplashScreen = ({ children }: any) => {
   return (
     <ImageBackground
       source={require('../assets/background_dot.png')}
       resizeMode="repeat"
       style={styles.background}
     >
-      <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "ios" ? "padding" : "height"}>
-        {children}
+      <KeyboardAvoidingView style={styles.container} behavior="padding">
+        <Image style={styles.logo} source={require('../assets/loading.gif')} />
       </KeyboardAvoidingView>
     </ImageBackground>
   )
@@ -31,6 +31,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  logo: {
+    height: 100,
+    width: 100
+  }
 })
 
-export default Background
+export default SplashScreen

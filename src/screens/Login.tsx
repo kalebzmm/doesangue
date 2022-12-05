@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TouchableOpacity, StyleSheet, View } from 'react-native'
+import { TouchableOpacity, StyleSheet, View, Image } from 'react-native'
 import { Text } from 'react-native-paper'
 import Background from '../components/Background'
 import Header from '../components/Header'
@@ -14,10 +14,11 @@ const LoginScreen = ({ navigation }: any) => {
 
   const [email, setEmail] = useState({ value: 'kalebjean22@gmail.com', error: '' })
   const [password, setPassword] = useState({ value: 'hb1036', error: '' })
-
   const dispatch = useDispatch();
 
   const handleLogin = () => {
+      setPassword({...password, error: ''})
+      setEmail({...email, error: ''})
       authUser(email.value, password.value).then((data) => {
         dispatch(setSignIn(data));
       }).catch((err) => {
@@ -28,7 +29,11 @@ const LoginScreen = ({ navigation }: any) => {
 
   return (
     <Background>
-      <Header>Olá, doador</Header>
+      <Header>
+        doe
+        <Image style={styles.logo} source={require('../assets/logo.jpg')} />
+        sangue
+      </Header>
       <TextInput
         description={""}
         label="E-mail"
@@ -83,6 +88,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: theme.colors.primary,
   },
+  logo: {
+    width: 40,
+    height: 40,
+  }
 })
 
 export default LoginScreen

@@ -13,6 +13,22 @@ const authUser = (email: string, password: string) => {
     })
 }
 
+const registerUser = (name: string, email: string, password: string, blood_type: string, birth: string) => {
+    return new Promise((resolve, reject) => {
+        api.post('/users/register', {
+            name,
+            email,
+            password,
+            blood_type,
+            birth,
+        }).then((response) => {
+            resolve(response.data)
+        }).catch((err) => {
+            reject(err)
+        })
+    })
+}
+
 const getUserData = (token: string) => {
     return new Promise((resolve, reject) => {
         api.get('/users/me', {
@@ -27,4 +43,4 @@ const getUserData = (token: string) => {
     })
 }
 
-export {authUser, getUserData}
+export {authUser, registerUser, getUserData}

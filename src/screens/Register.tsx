@@ -8,6 +8,7 @@ import TextInput from '../components/TextInput'
 import theme from '../core/theme'
 import SelectOptions from '../components/Select'
 import DatePicker from '../components/DatePicker'
+import { registerUser } from '../services/user'
 
 const RegisterScreen = ({ navigation }: any) => {
 
@@ -28,15 +29,25 @@ const RegisterScreen = ({ navigation }: any) => {
   ]
 
   const onSignUpPressed = () => {
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'BottomNav' }],
+    registerUser(
+      name.value, 
+      email.value, 
+      password.value, 
+      bloodType.value, 
+      birth.value
+    ).then((data: any) => {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Login' }],
+      })
+    }).catch((err) => {
+      console.log(JSON.stringify(err))
     })
   }
 
   return (
     <Background>
-      <Header>Cadastre-se</Header>
+      <Header>cadastre-se</Header>
       <TextInput
         label="Nome"
         returnKeyType="next"
