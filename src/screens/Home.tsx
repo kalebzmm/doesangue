@@ -15,10 +15,16 @@ interface IPost {
   deletedAt: Date;
 }
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}: any) => {
 
   const [posts, setPosts] = useState<IPost[]>([]);
   const [refreshing, setRefreshing] = useState(false);
+
+  const newSchedule = () => {
+    navigation.navigate({
+      name: 'NewSchedule',
+    })
+  }
 
   const loadPosts = () => {
     AsyncStorage.getItem('@DoeSangue:token').then((token) => {
@@ -58,7 +64,7 @@ const HomeScreen = () => {
               </Card.Content>
               <Card.Actions style={{marginTop: 20}}>
                 <TouchableNativeFeedback>
-                  <Button mode='contained'>Agendar</Button>
+                  <Button onPress={newSchedule} mode='contained'>Agendar</Button>
                 </TouchableNativeFeedback> 
               </Card.Actions>
             </Card>

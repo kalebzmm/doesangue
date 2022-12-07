@@ -12,11 +12,16 @@ import { registerUser } from '../services/user'
 
 const RegisterScreen = ({ navigation }: any) => {
 
+  const formatDate = (d: Date) => {
+    return d.toISOString().split('T')[0];
+  }
+
   const [name, setName] = useState({ value: '', error: '' })
   const [email, setEmail] = useState({ value: '', error: '' })
   const [bloodType, setBloodType] = useState({ value: '', error: '' })
-  const [birth, setBirth] = useState({ value: '', error: '' })
+  const [birth, setBirth] = useState({ date: new Date(), value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
+  const [error, setError] = useState('')
   const bloodTypes = [
     {label: 'A+', value: 'A+'},
     {label: 'A-', value: 'A-'},
@@ -29,11 +34,12 @@ const RegisterScreen = ({ navigation }: any) => {
   ]
 
   const onSignUpPressed = () => {
+    setError('');
     registerUser(
-      name.value, 
-      email.value, 
-      password.value, 
-      bloodType.value, 
+      name.value,
+      email.value,
+      password.value,
+      bloodType.value,
       birth.value
     ).then((data: any) => {
       navigation.reset({
@@ -41,13 +47,14 @@ const RegisterScreen = ({ navigation }: any) => {
         routes: [{ name: 'Login' }],
       })
     }).catch((err) => {
-      console.log(JSON.stringify(err))
+      setError('Verifique os dados informados e tente novamente.');
     })
   }
 
   return (
     <Background>
       <Header>cadastre-se</Header>
+      {error && <Text style={{color: 'red', textAlign: 'center', marginBottom: 5}}>{error}</Text>}
       <TextInput
         label="Nome"
         returnKeyType="next"
@@ -76,9 +83,8 @@ const RegisterScreen = ({ navigation }: any) => {
       />
       <DatePicker
         label="Nascimento"
-        value={birth.value}
-        onChange={(text: string) => setBirth({ value: text, error: '' })}
-        date={birth.value}
+        value={birth.date}
+        onChange={(d: Date) => setBirth({date: d, value: formatDate(d), error: ''})}
       />
       <TextInput
         label="Senha"

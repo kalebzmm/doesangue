@@ -6,8 +6,11 @@ import { Avatar } from 'react-native-paper'
 import { store } from '../store/redux-store';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserData, setSignOut } from '../store/slices/auth-slice';
+import DatePicker from '../components/DatePicker';
+import moment from 'moment'
+import TimePicker from '../components/TimePicker';
 
-const UserScreen = ({ navigation }: any) => {
+const NewSchedule = ({ navigation }: any) => {
 
   const dispatch = useDispatch();
 
@@ -15,31 +18,30 @@ const UserScreen = ({ navigation }: any) => {
   const [name, setName] = useState({ value: '', error: '' })
   const [email, setEmail] = useState({ value: '', error: '' })
   const [bloodType, setBloodType] = useState({ value: '', error: '' })
-  const [birth, setBirth] = useState({ value: '', error: '' })
-  const [password, setPassword] = useState({ value: '', error: '' })
+  const [scheduleDate, setScheduleDate] = useState({ date: new Date(), value: '', error: '' })
 
-  const Logout = () => {
-    dispatch(setSignOut())
+  const goBack = () => {
+    navigation.goBack();
   }
 
   React.useEffect(() => {
     setName({value: userData.name, error: ''})
     setEmail({value: userData.email, error: ''})
-    setBirth({value: userData.birth, error: ''})
     setBloodType({value: userData.blood_type, error: ''})
     setBloodType({value: userData.blood_type, error: ''})
   }, [userData])
 
   return (
     <View style={styles.container}>
-      <Avatar.Image style={styles.avatar} size={150} source={require('../assets/avatar.jpg')} />
-      <TextInput
-        label="Nome"
-        returnKeyType="next"
-        value={name.value}
-        onChangeText={(text: string) => setName({ value: text, error: '' })}
-        error={!!name.error}
-        errorText={name.error}
+      <DatePicker
+        label="Data"
+        value={scheduleDate.date}
+        onChange={(d: Date) => setScheduleDate({date: d, value: moment(d).format('YYYY-MM-DD hh:mm:ss'), error: ''})}
+      />
+      <TimePicker
+        label="Hora"
+        value={scheduleDate.date}
+        // onChange={(d: Date) => setScheduleDate({date: d, value: moment(d).format('YYYY-MM-DD hh:mm:ss'), error: ''})}
       />
       <TextInput
         label="E-mail"
@@ -62,32 +64,14 @@ const UserScreen = ({ navigation }: any) => {
         errorText={bloodType.error}
         disabled
       />
-      <TextInput
-        label="Nascimento"
-        returnKeyType="next"
-        value={birth.value}
-        onChangeText={(text: string) => setBirth({ value: text, error: '' })}
-        error={!!birth.error}
-        errorText={birth.error}
-        disabled
-      />
-      {/* <TextInput
-        label="Senha"
-        returnKeyType="done"
-        value={password.value}
-        onChangeText={(text: string) => setPassword({ value: text, error: '' })}
-        error={!!password.error}
-        errorText={password.error}
-        secureTextEntry
-      /> */}
       <TouchableNativeFeedback>
-        <Button style={styles.saveButton} icon="content-save" mode="contained">
-          Salvar
+        <Button style={styles.saveButton} mode="contained">
+          Agendar
         </Button>
       </TouchableNativeFeedback>
       <TouchableNativeFeedback>
-        <Button style={styles.logoutButton} icon="logout" mode="outlined" onPress={Logout}>
-          Sair
+        <Button style={styles.goBackButton} mode="outlined" onPress={goBack}>
+          Cancelar
         </Button>
       </TouchableNativeFeedback>
     </View>
@@ -104,10 +88,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  logoutButton: {
-    position: 'absolute',
-    top: 20,
-    right: -25
+  goBackButton: {
+    width: '100%',
+    marginTop: 15
   },
   saveButton: {
     width: '100%',
@@ -118,4 +101,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default UserScreen;
+export default NewSchedule;

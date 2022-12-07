@@ -4,13 +4,14 @@ import { Provider as PaperProvider } from 'react-native-paper';
 import { useDispatch, useSelector } from 'react-redux';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-community/async-storage';
-import BottomNav from './src/screens/BottomNav';
-import theme from './src/core/theme';
-import LoginScreen from './src/screens/Login';
-import RegisterScreen from './src/screens/Register';
-import { getUserData } from './src/services/user';
-import { selectIsLoggedIn, setUserData } from './src/store/slices/auth-slice';
-import SplashScreen from './src/components/SplashScreen';
+import BottomNavigation from './screens/BottomNavigation';
+import theme from './core/theme';
+import LoginScreen from './screens/Login';
+import RegisterScreen from './screens/Register';
+import { getUserData } from './services/user';
+import { selectIsLoggedIn, setUserData } from './store/slices/auth-slice';
+import SplashScreen from './components/SplashScreen';
+import NewScheduleScreen from './screens/NewSchedule';
 
 const Stack = createNativeStackNavigator();
 
@@ -46,7 +47,8 @@ const AppRoute = () => {
                     </Stack.Group>
                     ) : (
                     <Stack.Group>
-                        <Stack.Screen name="BottomNav" component={BottomNav} />
+                        <Stack.Screen name="BottomNav" component={BottomNavigation} />
+                        <Stack.Screen name="NewSchedule" component={NewScheduleScreen} />
                     </Stack.Group>
                     )}
                 </Stack.Navigator>

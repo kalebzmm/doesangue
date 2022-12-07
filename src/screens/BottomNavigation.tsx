@@ -7,7 +7,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const Tab = createMaterialBottomTabNavigator();
 
-const BottomNav = () => {
+const BottomNavigation = () => {
 
   return (
     <Tab.Navigator>
@@ -39,4 +39,4 @@ const BottomNav = () => {
   );
 };
 
-export default BottomNav;
+export default BottomNavigation;

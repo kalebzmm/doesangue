@@ -1,9 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit"
 import AsyncStorage from '@react-native-community/async-storage'
 
-const initialState = {
+interface UserData {
+    isLoggedIn: boolean;
+    id: string;
+    email: string;
+    accessToken: string;
+    name: string;
+    birth: string;
+    blood_type: string;
+}
+
+const initialState: UserData = {
     isLoggedIn: false,
-    isLoading: false,
     email: '',
     accessToken: '',
     name: '',
@@ -56,7 +65,7 @@ const userSlice = createSlice({
 
 export const { setSignIn, setSignOut, setUserData } = userSlice.actions;
 
-export const selectIsLoggedIn = (state: any) => state.userData.isLoggedIn;
-export const selectIsLoading = (state: any) => state.userData.isLoading;
+export const selectUserData = (state: any): UserData => state.userData;
+export const selectIsLoggedIn = (state: any): boolean => state.userData.isLoggedIn;
 
 export default userSlice.reducer;
