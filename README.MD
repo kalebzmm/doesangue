@@ -1,5 +1,9 @@
 # Doe Sangue
 
+<div align="center">
+    <img src="logo.png" alt="Logo do projeto">
+</div>
+
 ![GitHub repo size](https://img.shields.io/github/repo-size/kalebzmm/doesangue?style=for-the-badge)
 <br/>
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
@@ -8,10 +12,6 @@
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=bugs)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
-
-<div align="center">
-    <img src="logo.png" alt="Logo do projeto">
-</div>
 
 ## Sobre
 
