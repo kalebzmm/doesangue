@@ -21,6 +21,10 @@ O projeto tem como objetivo criar um aplicativo que _melhore a experiência_ o p
 
 [API Doe Sangue](https://github.com/kalebzmm/doesangue-api)
 
+## 🎲 Diagrama do banco de dados
+
+<img src="diagrama.png">
+
 ## 🎨 Interfaces
 
 [Doe Sangue no Figma](https://www.figma.com/file/uFNBVN4dAIQcZAvkk26X9r/Doe-Sangue?node-id=0%3A1&t=ZyEQt0ahv9yYREfF-1)
