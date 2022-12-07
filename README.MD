@@ -13,9 +13,9 @@
     <img src="logo.png" alt="Logo do projeto">
 </div>
 
-> O projeto tem como objetivo criar um aplicativo que _melhore a experiência_ o processo de doação de sangue desde as instruções para doação, agendamento em hemocentros cadastrados e acompanhamento do período até que o usuário esteja habilitado para doar novamente.
+## Sobre
 
-> A motivação principal do projeto é o incentivo a doação de sangue, prática que sendo normalizada pode beneficiar milhões de pessoas em todo o mundo que necessitam de transfusão.
+O projeto tem como objetivo criar um aplicativo que _melhore a experiência_ o processo de doação de sangue desde as instruções para doação, agendamento em hemocentros cadastrados e acompanhamento do período até que o usuário esteja habilitado para doar novamente. A motivação principal do projeto é o incentivo a doação de sangue, prática que sendo normalizada pode beneficiar milhões de pessoas em todo o mundo que necessitam de transfusão.
 
 ## Telas de autenticação
 <table>
