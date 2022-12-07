@@ -17,15 +17,15 @@
 
 O projeto tem como objetivo criar um aplicativo que _melhore a experiência_ o processo de doação de sangue desde as instruções para doação, agendamento em hemocentros cadastrados e acompanhamento do período até que o usuário esteja habilitado para doar novamente. A motivação principal do projeto é o incentivo a doação de sangue, prática que sendo normalizada pode beneficiar milhões de pessoas em todo o mundo que necessitam de transfusão.
 
-## Backend
+## 🔌 Backend
 
 [API Doe Sangue](https://github.com/kalebzmm/doesangue-api)
 
-## Interfaces
+## 🎨 Interfaces
 
-[FIGMA](https://www.figma.com/file/uFNBVN4dAIQcZAvkk26X9r/Doe-Sangue?node-id=0%3A1&t=ZyEQt0ahv9yYREfF-1)
+[Doe Sangue no Figma](https://www.figma.com/file/uFNBVN4dAIQcZAvkk26X9r/Doe-Sangue?node-id=0%3A1&t=ZyEQt0ahv9yYREfF-1)
 
-## Telas de autenticação
+## 📱 Telas de autenticação
 
 <table>
     <tr>
@@ -38,7 +38,7 @@ O projeto tem como objetivo criar um aplicativo que _melhore a experiência_ o p
     </tr>
 </table>
 
-## Ajustes e melhorias
+## ✍🏻 Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
@@ -61,7 +61,7 @@ Para instalar as dependências da aplicação, rode o seguinte comando na pasta 
 npm install
 ```
 
-## ☕ Usando
+## ☕ Testando
 
 Para usar o aplicativo, siga estas etapas:
 
