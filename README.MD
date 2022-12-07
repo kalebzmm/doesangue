@@ -9,7 +9,9 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
 
-<img src="logo.png" alt="Logo do projeto">
+<div align="center">
+    <img src="logo.png" alt="Logo do projeto">
+</div>
 
 > O projeto tem como objetivo criar um aplicativo de celular que "gamifique" o processo de doação de sangue, criando meios de realizar o agendamento em postos cadastrados, receber avisos de agendamentos previstos e acompanhar o tempo restante para poder doar novamente.
 
