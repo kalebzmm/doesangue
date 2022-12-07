@@ -17,7 +17,16 @@
 
 O projeto tem como objetivo criar um aplicativo que _melhore a experiência_ o processo de doação de sangue desde as instruções para doação, agendamento em hemocentros cadastrados e acompanhamento do período até que o usuário esteja habilitado para doar novamente. A motivação principal do projeto é o incentivo a doação de sangue, prática que sendo normalizada pode beneficiar milhões de pessoas em todo o mundo que necessitam de transfusão.
 
+## Backend
+
+[API Doe Sangue](https://github.com/kalebzmm/doesangue-api)
+
+## Interfaces
+
+[FIGMA](https://www.figma.com/file/uFNBVN4dAIQcZAvkk26X9r/Doe-Sangue?node-id=0%3A1&t=ZyEQt0ahv9yYREfF-1)
+
 ## Telas de autenticação
+
 <table>
     <tr>
         <td>
