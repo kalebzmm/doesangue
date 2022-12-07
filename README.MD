@@ -13,9 +13,11 @@
     <img src="logo.png" alt="Logo do projeto">
 </div>
 
-> O projeto tem como objetivo criar um aplicativo de celular que "gamifique" o processo de doação de sangue, criando meios de realizar o agendamento em postos cadastrados, receber avisos de agendamentos previstos e acompanhar o tempo restante para poder doar novamente.
+> O projeto tem como objetivo criar um aplicativo que _melhore a experiência_ o processo de doação de sangue desde as instruções para doação, agendamento em hemocentros cadastrados e acompanhamento do período até que o usuário esteja habilitado para doar novamente.
 
-### Telas de autenticação
+> A motivação principal do projeto é o incentivo a doação de sangue, prática que sendo normalizada pode beneficiar milhões de pessoas em todo o mundo que necessitam de transfusão.
+
+## Telas de autenticação
 <table>
     <tr>
         <td>
@@ -27,7 +29,7 @@
     </tr>
 </table>
 
-### Ajustes e melhorias
+## Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
