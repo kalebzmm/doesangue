@@ -29,8 +29,6 @@ O projeto tem como objetivo criar um aplicativo que _melhore a experiência_ o p
 
 [Doe Sangue no Figma](https://www.figma.com/file/uFNBVN4dAIQcZAvkk26X9r/Doe-Sangue?node-id=0%3A1&t=ZyEQt0ahv9yYREfF-1)
 
-## 📱 Telas de autenticação
-
 <table>
     <tr>
         <td>
