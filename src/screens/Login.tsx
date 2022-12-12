@@ -27,6 +27,10 @@ const LoginScreen = ({ navigation }: any) => {
       })
   }
 
+  const goToRegisterPage = () => {
+    navigation.replace('Register');
+  }
+
   return (
     <Background>
       <Header>
@@ -62,7 +66,7 @@ const LoginScreen = ({ navigation }: any) => {
       </Button>
       <View style={styles.row}>
         <Text>Ainda não tem uma conta? </Text>
-        <TouchableOpacity onPress={() => navigation.replace('Register')}>
+        <TouchableOpacity onPress={goToRegisterPage}>
           <Text style={styles.link}>Cadastre-se</Text>
         </TouchableOpacity>
       </View>

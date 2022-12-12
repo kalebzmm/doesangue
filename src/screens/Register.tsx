@@ -33,6 +33,10 @@ const RegisterScreen = ({ navigation }: any) => {
     {label: 'AB-  ', value: 'AB-'},
   ]
 
+  const goToLoginPage = () => {
+    navigation.replace('Login')
+  }
+
   const onSignUpPressed = () => {
     setError('');
     registerUser(
@@ -104,7 +108,7 @@ const RegisterScreen = ({ navigation }: any) => {
       </Button>
       <View style={styles.row}>
         <Text>Já tem uma conta? </Text>
-        <TouchableOpacity onPress={() => navigation.replace('Login')}>
+        <TouchableOpacity onPress={goToLoginPage}>
           <Text style={styles.link}>Entrar</Text>
         </TouchableOpacity>
       </View>

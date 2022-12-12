@@ -26,13 +26,17 @@ const DatePicker = ({ errorText, description, ...props }: any) => {
 
   const [visible, setVisible] = React.useState(false);
 
+  const hideDatePicker = () => {
+    setVisible(false);
+  }
+
   return (
     <View style={styles.container}>
       <DatePickerInput
         locale='pt-br'
         mode='single'
         visible={visible}
-        onDismiss={() => setVisible(false)}
+        onDismiss={hideDatePicker}
         {...props}
       />
       {description && !errorText ? (

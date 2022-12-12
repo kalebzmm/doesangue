@@ -27,13 +27,17 @@ const TimePicker = ({ errorText, description, ...props }: any) => {
 
   const [visible, setVisible] = React.useState(false);
 
+  const hideTimePicker = () => {
+    setVisible(false)
+  }
+
   return (
     <View style={styles.container}>
       <TextInput
         locale='pt-br'
         mode='single'
         visible={visible}
-        onDismiss={() => setVisible(false)}
+        onDismiss={hideTimePicker}
         {...props}
       />
       {description && !errorText ? (

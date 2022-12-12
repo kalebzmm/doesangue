@@ -7,13 +7,21 @@ const SelectOptions = ({ errorText, description, ...props }: any) => {
 
   const [showDropDown, setShowDropDown] = useState(false);
 
+  const showDropDownTrue = () => {
+    setShowDropDown(true);
+  }
+
+  const showDropDownFalse = () => {
+    setShowDropDown(false);
+  }
+
   return (
     <View style={styles.container}>
         <DropDown
             mode={"outlined"}
             visible={showDropDown}
-            showDropDown={() => setShowDropDown(true)}
-            onDismiss={() => setShowDropDown(false)}
+            showDropDown={showDropDownTrue}
+            onDismiss={showDropDownFalse}
             {...props}
         />
       {description && !errorText ? (
