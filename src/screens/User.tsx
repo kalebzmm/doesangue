@@ -3,11 +3,10 @@ import { StyleSheet, TouchableNativeFeedback, View } from "react-native";
 import { Button } from 'react-native-paper';
 import TextInput from '../components/TextInput';
 import { Avatar } from 'react-native-paper'
-import { store } from '../store/redux-store';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserData, setSignOut } from '../store/slices/auth-slice';
 
-const UserScreen = ({ navigation }: any) => {
+const UserScreen = () => {
 
   const dispatch = useDispatch();
 
@@ -16,7 +15,6 @@ const UserScreen = ({ navigation }: any) => {
   const [email, setEmail] = useState({ value: '', error: '' })
   const [bloodType, setBloodType] = useState({ value: '', error: '' })
   const [birth, setBirth] = useState({ value: '', error: '' })
-  const [password, setPassword] = useState({ value: '', error: '' })
 
   const Logout = () => {
     dispatch(setSignOut())
