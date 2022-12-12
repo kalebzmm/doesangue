@@ -13,17 +13,25 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=kalebzmm_doesangue&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=kalebzmm_doesangue)
 
-## Sobre
+## Sobre o projeto
 
 O projeto tem como objetivo criar um aplicativo que _melhore a experiência_ o processo de doação de sangue desde as instruções para doação, agendamento em hemocentros cadastrados e acompanhamento do período até que o usuário esteja habilitado para doar novamente. A motivação principal do projeto é o incentivo a doação de sangue, prática que sendo normalizada pode beneficiar milhões de pessoas em todo o mundo que necessitam de transfusão.
 
-## 🔌 Backend
+## Sobre a aplicação
+
+O aplicativo é desenvolvido em React Native, utiliza o conceito de gerenciamento de estados do [Redux](https://react-redux.js.org/) e faz todas as consultas em um [backend](#backend) em NestJS com banco de dados MySQL.
+
+## Backend
 
 [API Doe Sangue](https://github.com/kalebzmm/doesangue-api)
 
-## 🎲 Diagrama do banco de dados
+## Diagrama do banco de dados
 
 <img src="diagrama.png">
+
+## Diagrama de arquitetura
+
+<img src="diagrama_arquitetura.png">
 
 ## 🎨 Interfaces
 
@@ -44,11 +52,13 @@ O projeto tem como objetivo criar um aplicativo que _melhore a experiência_ o p
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [X] Mockup das telas
+- [X] Telas de consulta de agendamentos
+- [X] Telas de avisos de hemocentros cadastrados
 - [X] Telas de autenticação de cadastro
-- [X] Telas de agendamento 
-- [ ] Telas de notificação
+- [X] Telas de agendamento de doação
+- [ ] Telas de instruções para doação
 - [ ] Telas de espera da próxima doação
+- [ ] Sistema de pontuação e medalhas
 
 ## 💻 Pré-requisitos
 
@@ -86,4 +96,4 @@ Como alternativa, consulte a documentação do GitHub em [como criar uma solicit
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
 
-[⬆ Voltar ao topo](#DoeSangue)<br>
+[⬆ Voltar ao topo](#doe-sangue) <br>
